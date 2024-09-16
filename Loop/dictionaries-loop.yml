@@ -1,0 +1,8 @@
+- name: Create multiple users
+  ansible.builtin.user:
+    name: "{{ item.name }}"
+    uid: "{{ item.uid }}"
+    state: present
+  loop:
+    - { name: 'user1', uid: 1001 }
+    - { name: 'user2', uid: 1002 }
