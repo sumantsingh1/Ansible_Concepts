@@ -1,0 +1,8 @@
+- name: Install multiple packages
+  ansible.builtin.yum:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - httpd
+    - nginx
+    - mariadb
